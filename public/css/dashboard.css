@@ -1,0 +1,151 @@
+body {
+  font-family: 'Verdana', sans-serif;
+  background: #e0f7fa;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 0.8s ease;
+  position: relative;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  color: #006064;
+}
+
+/* Logout Button - Top Right */
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 8px 16px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* Table */
+table {
+  width: 100%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  animation: slideFade 0.5s ease-in-out;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #00796b;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f1f8e9;
+}
+
+/* Action Buttons */
+a.button-link {
+  padding: 8px 14px;
+  background-color: #f57c00;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+a.button-link:hover {
+  background-color: #e65100;
+  transform: scale(1.05);
+}
+
+/* Add Button - Bottom Center */
+.add-btn-container {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #2e7d32;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: #00796b;
+  }
+
+  .logout-btn {
+    right: 10px;
+    top: 10px;
+    font-size: 14px;
+  }
+
+  .add-btn {
+    width: 80%;
+  }
+}

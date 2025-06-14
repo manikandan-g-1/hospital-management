@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Patient</title>
+  <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Edit Patient Details</h2>
+    <form action="/edit/<%= patient._id %>" method="POST">
+      
+      <label for="sno">Serial No:</label>
+      <input type="number" id="sno" name="sno" value="<%= patient.sno %>" required>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<%= patient.name %>" required>
+
+      <label for="disease">Disease:</label>
+      <input type="text" id="disease" name="disease" value="<%= patient.disease %>" required>
+
+      <label for="doctor">Doctor:</label>
+      <input type="text" id="doctor" name="doctor" value="<%= patient.doctor %>" required>
+
+      <label for="room">Room:</label>
+      <input type="number" id="room" name="room" value="<%= patient.room %>" required>
+
+      <label for="admitted">Admitted:</label>
+      <select id="admitted" name="admitted">
+        <option value="true" <%= patient.admitted ? 'selected' : '' %>>Yes</option>
+        <option value="false" <%= !patient.admitted ? 'selected' : '' %>>No</option>
+      </select>
+
+      <button type="submit">Update</button>
+    </form>
+    <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

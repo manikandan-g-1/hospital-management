@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+  
+</head>
+<body>
+  <a href="/logout" class="logout-btn">🚪 Logout</a>
+
+  <div class="container">
+    <h2>Welcome to Patient Dashboard</h2>
+
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Disease</th>
+        <th>Doctor</th>
+        <th>Room</th>
+        <th>Admitted</th>
+        <th>Actions</th>
+      </tr>
+      <% patients.forEach(patient => { %>
+        <tr>
+          <td><%= patient.sno %></td>
+          <td><%= patient.name %></td>
+          <td><%= patient.disease %></td>
+          <td><%= patient.doctor %></td>
+          <td><%= patient.room %></td>
+          <td><%= patient.admitted ? 'Yes' : 'No' %></td>
+          <td>
+            <a href="/edit/<%= patient._id %>" class="button-link">✏️ Edit</a>
+            <a href="/delete/<%= patient._id %>" class="button-link" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+
+    <div class="add-btn-container">
+      <a href="/add" class="add-btn">➕ Add New Patient</a>
+    </div>
+  </div>
+</body>
+</html>

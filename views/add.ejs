@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Patient</title>
+  <link rel="stylesheet" href="/css/add.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <h2>Add New Patient</h2>
+    <form action="/add" method="POST">
+      <label for="sno">Serial Number:</label>
+      <input type="number" id="sno" name="sno" required />
+
+      <label for="name">Patient Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="disease">Disease:</label>
+      <input type="text" id="disease" name="disease" required />
+
+      <label for="doctor">Doctor Name:</label>
+      <input type="text" id="doctor" name="doctor" required />
+
+      <label for="room">Room No:</label>
+      <input type="text" id="room" name="room" required />
+
+      <label for="admitted">Admitted:</label>
+      <select id="admitted" name="admitted" required>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+
+      <button type="submit">Add Patient</button>
+    </form>
+    <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+  </div>
+</body>
+</html>
